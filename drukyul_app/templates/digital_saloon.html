@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div class="container">
+        {% for saloon in digital_saloons %}
+        <div class="row mt-5 pb-5">
+            <div class="col-md-2">
+                <h3 style="font-weight: bold; text-align: center;">{{ saloon.date_published }}</h3>
+            </div>
+            <div class="col-md-6">
+                <a href="{% url 'digital_saloon_detail' saloon.id %}">
+                <h1 class="text-center">{{ saloon.title }}</h1>
+                </a>
+
+                <br/>
+                <a href="{% url 'digital_saloon_detail' saloon.id %}">
+                <p>{{ saloon.description|truncatewords:50 }}</p>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <div class="blog-img">
+                    <a href="{% url 'digital_saloon_detail' saloon.id %}">
+                    <img src="{{ saloon.image.url }}" alt="digital saloon" class="img-fluid"/>
+                        </a>
+                </div>
+            </div>
+
+        </div>
+            <br/>
+            <hr/>
+     {% endfor %}
+    </div>
+
+{% endblock content %}

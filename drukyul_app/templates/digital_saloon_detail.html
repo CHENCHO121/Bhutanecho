@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-sm-12 offset-2">
+                <h1 class="text-center pb-2">{{ digital_saloon.title }}</h1>
+                <h3 class="text-center pb-2">{{ digital_saloon.date_published }}</h3>
+                <img src="{{ digital_saloon.image.url }}" alt="img" class="img-fluid center pb-5"
+                     style="display: block;margin-left: auto; margin-right: auto;width: 70%; height: 40%"/>
+
+                <p class="text-center">{{ digital_saloon.description }}</p>
+            </div>
+
+        </div>
+
+    </div>
+{% endblock %}

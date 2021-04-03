@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div class="container">    
+        {% for read in lockdown_reads %}
+        <div class="row mt-5 pb-5">
+            <div class="col-md-2">
+                <h3 style="font-weight: bold; text-align: center;">{{ read.date_published }}</h3>
+            </div>
+            <div class="col-md-6">
+                <a href="{% url 'lockdown_read_detail' read.id %}">
+                <h1 class="text-center">{{ read.title }}</h1>
+                </a>
+
+                <br/>
+                <a href="{% url 'lockdown_read_detail' read.id %}">
+                <p>{{ read.description|truncatewords:40 }}</p>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <div class="blog-img">
+                    <a href="{% url 'lockdown_read_detail' read.id %}">
+                    <img src="{{ read.image.url }}" alt="news_update" class="img-fluid"/>
+                        </a>
+                </div>
+            </div>
+
+        </div>
+            <br/>
+            <hr/>
+     {% endfor %}
+    </div>
+
+{% endblock content %}

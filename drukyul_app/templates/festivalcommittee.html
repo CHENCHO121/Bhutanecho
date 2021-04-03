@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+    <main>
+        <section class="team-section spad">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 ">
+                        <div class="section-title text-center">
+                            <h2><b>Festival Committee</b></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-members clearfix">
+                    <!-- Team member -->
+                    {% for advisor in advisors %}
+                        <div class="member">
+                            <div class="member-text">
+                                <div class="member-img set-bg">
+                                    <img src="{{ advisor.profile_img.url }}" alt="Image" class="img-fluid">
+                                </div>
+                                <h2>{{ advisor.name }}</h2>
+                                <span>{{ advisor.title }}</span>
+                            </div>
+                            <div class="member-info">
+                                <div class="member-img mf set-bg">
+                                    <img src="{{ advisor.profile_img.url }}" alt="Image" class="img-fluid">
+                                </div>
+                                <div class="member-meta">
+                                    <h2>{{ advisor.name }}</h2>
+                                    <span>{{ advisor.title }}</span>
+                                </div>
+                                <p>{{ advisor.introduction }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                </div>
+                <br>
+                <div class="container">
+                    <div class="team-members clearfix">
+                        <!-- Team member -->
+                        {% for director in directors %}
+                            <div class="member">
+                                <div class="member-text">
+                                    <div class="member-img set-bg">
+                                        <img src="{{ director.profile_img.url }}" alt="Image" class="img-fluid">
+                                    </div>
+                                    <h2>{{ director.name }}</h2>
+                                    <span>{{ director.title }}</span>
+                                </div>
+                                <div class="member-info">
+                                    <div class="member-img mf set-bg">
+                                        <img src="{{ director.profile_img.url }}" alt="Image" class="img-fluid">
+                                    </div>
+                                    <div class="member-meta">
+                                        <h2>{{ director.name }}</h2>
+                                        <span>{{ director.title }}</span>
+                                    </div>
+                                    <p>{{ director.introduction }}</p>
+                                </div>
+                            </div>
+                        {% endfor %}
+
+                    </div>
+                    <br>
+                    <div class="container">
+                        <div class="team-members clearfix">
+                            <!-- Team member Producer -->
+                            {% for producer in producers %}
+                                <div class="member">
+                                    <div class="member-text">
+                                        <div class="member-img set-bg">
+                                            <img src="{{ producer.profile_img.url }}" alt="Image" class="img-fluid">
+                                        </div>
+                                        <h2>{{ producer.name }}</h2>
+                                        <span>{{ producer.title }}</span>
+                                    </div>
+                                    <div class="member-info">
+                                        <div class="member-img mf set-bg">
+                                            <img src="{% static 'images/p.png' %}" alt="Image" class="img-fluid">
+                                        </div>
+                                        <div class="member-meta">
+                                            <h2>{{ producer.name }}</h2>
+                                            <span>{{ producer.title }}</span>
+                                        </div>
+                                        <p>{{ producer.introduction }}</p>
+                                    </div>
+                                </div>
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+{% endblock content %}

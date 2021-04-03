@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <main>
+        <section>
+            <div class="container mt-5">
+            <h1 class="text-center">Sponsors & Partners</h1>
+            <br/><br/><br/><br/>
+                <h3 style="color:  black!important;">PROJECT PARTNERS</h3>
+                <div class="row">
+                    {% for pp2 in pp2 %}
+                        <div class="col-m4">
+                            <!-- Team member -->
+                            <a href="{{ pp2.website_link }}"><img src="{{ pp2.image.url }}" alt="Image" height="300" width="270"></a>
+                        </div>
+                    {% endfor %}
+
+                </div>
+            <br/>
+            <hr/>
+            <br/>
+            <h3 style="color:  black!important;">PRINCIPAL PARTNERS</h3>
+                <div class="row">
+                    {% for pp in pp %}
+                        <div class="col-m4">
+                            <!-- Team member -->
+                            <a href="{{ pp.website_link }}"><img src="{{ pp.image.url }}" alt="Image" height="300" width="270"></a>
+
+                        </div>
+                    {% endfor %}
+
+                </div>
+             <br/>
+            <hr/>
+            <br/>
+            <h3 style="color:  black!important;">VENUE PARTNERS</h3>
+                <div class="row">
+                    {% for vp in vp %}
+                        <div class="col-m4">
+                            <!-- Team member -->
+                            <a href="{{ vp.website_link }}"><img src="{{ vp.image.url }}" alt="Image" height="300" width="270"></a>
+
+                        </div>
+                    {% endfor %}
+
+                </div>
+             <br/>
+            <hr/>
+            <br/>
+
+            <h3 style="color:  black!important;">MEDIA PARTNERS</h3>
+                <div class="row">
+                    {% for mp in mp %}
+                        <div class="col-m4">
+                            <!-- Team member -->
+                            <a href="{{ mp.website_link }}"><img src="{{ mp.image.url }}" alt="Image" height="300" width="270"></a>
+
+                        </div>
+                    {% endfor %}
+
+                </div>
+             <br/>
+            <hr/>
+            <br/>
+            <h3 style="color:  black!important;">SPONSORS DIRECTORY</h3>
+                <div class="row">
+                    {% for sd in sd %}
+                        <div class="col-m4">
+                            <!-- Team member -->
+                            <a href="{{ sd.website_link }}"><img src="{{ sd.image.url }}" alt="Image" height="300" width="270"></a>
+
+                        </div>
+                    {% endfor %}
+
+                </div>
+             <br/>
+            <br/>
+            </div>
+        </section>
+
+    </main>
+
+{% endblock content %}

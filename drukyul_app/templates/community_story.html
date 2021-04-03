@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+      <main>
+        <section class="home-blog-area about pb-bottom ">
+            <div class="container">
+            <h1 class="text-center" style="margin-bottom: 50px">Community Story</h1>
+                <div class="row">
+                    {% for blog in blogs %}
+                        <div class="col-lg-4 col-md-6">
+                            <div class="home-blog-single">
+                                <div class="blog-img-cap">
+                                    <div class="blog-img">
+                                        <img src="{{ blog.image.url }}" alt="news_update" class="img-fluid"/>
+                                    </div>
+                                    <div class="blog-cap">
+                                        <h3><a href="{% url 'community_story_detail' blog.id %}" class="text-center">{{ blog.title }}</a></h3>
+                                        <p class="text-center">{{ blog.date_published }}</p>
+                                        <div class="about-text">
+                                            <a class="btn btn-block" href="{% url 'community_story_detail' blog.id %}">Read more</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+{% endblock content %}

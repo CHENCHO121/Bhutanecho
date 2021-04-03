@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="container">
+        {% for book in breathing_book %}
+            <div class="row pb-5 mt-5">
+
+                <div class="col-md-4">
+                    <div class="blog-img">
+                        <img src="{{ book.image.url }}" alt="news_update" class="img-fluid"/>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <h1 class="text-center">{{ book.title }}</h1>
+
+                    <br/>
+                    <span style="font-weight: bold; text-align: center;font-size: 15px">{{ book.date_published }}</span>
+                    <p>{{ book.description }}</p>
+                </div>
+
+
+            </div>
+            <br/>
+            <hr/>
+        {% endfor %}
+
+    </div>
+{% endblock content %}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+     <main>
+        <section class="home-blog-area about pb-bottom ">
+            <div class="container">
+            <h1 class="text-center" style="margin-bottom: 50px">Initiatives</h1>
+                <div class="row">
+                    {% for initiative in initiatives %}
+                        <div class="col-lg-4 col-md-6">
+                            <div class="home-blog-single">
+                                <div class="blog-img-cap">
+                                    <div class="blog-img">
+                                        <img src="{{  initiative.image.url }}" alt="news_update" class="img-fluid"/>
+                                    </div>
+                                    <div class="blog-cap">
+                                        <h3><a href="{% url 'initiatives_detail' initiative.id %}" class="text-center">{{ initiative.title }}</a></h3>
+                                        <p class="text-center">{{ initiative.date_published }}</p>
+                                        <div class="about-text">
+                                            <a class="btn btn-block" href="{% url 'initiatives_detail' initiative.id %}">Read more</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+{% endblock content %}

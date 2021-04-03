@@ -1,0 +1,245 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <main>
+        <!--? slider Area Start-->
+        <div class="slider-area position-relative">
+            <div class="slider-active">
+                <!-- Single Slider -->
+                <div class="single-slider slider-height d-flex align-items-center">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="hero__caption" style="text-align: center;">
+                                    <h1 data-animation="fadeInLeft" data-delay="0.2s">Bhutan Echoes </h1>
+                                    <p data-animation="fadeInLeft" data-delay="0.4s">DRUKYUL'S LITERTURE FESTIVAL</p>
+                                    <p data-animation="fadeInLeft" data-delay="0.4s">Under the patronage of Her Majesty
+                                        the Queen Mother,<br>
+                                        Bhutan Echoes is a year long clebration of<br> literature in the Kingdom of
+                                        Bhutan </p>
+                                </div>
+                            </div>
+                            <a href="#section1" class="scroll-button smoothscroll">
+                                <span class=" icon-keyboard_arrow_down"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="wantToWork-area">
+            <div class="container">
+                <div class="wants-wrapper w-padding3">
+                    <div class="row align-items-center justify-content-between">
+                        <div class="col-xl-3 col-lg-3 col-md-3">
+                            <div class="wantToWork-caption wantToWork-caption2">
+
+                            </div>
+                        </div>
+                        <div class="col-xl-8 col-lg-8 col-md-8">
+                            <div class="double-btn f-right ">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="site-section testimonial-wrap custom-owl-carousel about" id="section1"
+             style="background-color: #f7f7fd;">
+            <div class="container">
+                <div class="row text-center justify-content mb-5" data-aos="fade-up">
+                    <div class="col-lg-6 mb-5 text-center">
+                        <h2 class="section-title w-100 mx-auto">Featured Initiatives</h2>
+                    </div>
+                    <div class="owl-custom-direction" style="margin-left: 20px;">
+                        <a href="#" class="custom-prev">
+                            <span class="icon-keyboard_arrow_left"></span>
+                        </a>
+                        <a href="#" class="custom-next"><span class="icon-keyboard_arrow_right"></span></a>
+                    </div>
+                </div>
+
+                <div class="row align-items-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="col-lg-5 mr-auto">
+                        <div class="owl-carousel slide-one-item-alt-text">
+                            {% for obj in initiatives %}
+                            <div class="slide-text">
+                                <h1>{{ obj.title }}</h1>
+                                <p class="mb-5">{{ obj.description|truncatewords:40 }}</p>
+                                <div class="about-text">
+                                    <a class="btn" href="{% url 'initiatives' %}">View More</a>
+                                </div>
+                            </div>
+                            {% endfor %}
+
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 ml-auto" data-aos="fade-up" data-aos-delay="200">
+
+                        <div class="owl-carousel slide-one-item-alt">
+                             {% for obj in initiatives %}
+                            <div class="portfolio-item">
+                                <div class="thumb">
+                                    <img src="{{ obj.image.url }}" alt="Image"  height="320px">
+                                </div>
+{#                                <div class="thumb-inner animate" data-animate="fadeInUp">#}
+{#                                    <h4>{{ obj.title }}</h4>#}
+{#                                    <p>{{ obj.description }}</p>#}
+{##}
+{#                                </div>#}
+                            </div>
+
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="about">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-5 col-md-6">
+                    </div>
+                    <div class="col-lg-7 col-md-6">
+                        <div class="about-text">
+                            <a class="btn" href="{% url 'initiatives' %}">View All Initiatives</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="service-area section-bg" data-background="{% static 'images/bg1.jpg' %}">
+            <div class="container">
+                <div class="row align-items-end no-gutters">
+
+                </div>
+            </div>
+        </div>
+        <div class="about">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-5 col-md-6">
+                        <div class="about-img">
+                            <img src="{% static 'images/azhi12.jpg' %}" alt="Image">
+                        </div>
+                    </div>
+                    <div class="col-lg-7 col-md-6">
+                        <div class="section-header text-left">
+                            <h2>Expert View</h2>
+                        </div>
+                        <div class="about-text">
+                            <p>Under the patronage of Her Majesty the Queen Mother,<br>
+                                Bhutan Echoes is a year long clebration of</p>
+                            <a class="btn" href="">Meet our expert</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="pb-bottom">
+        <div class="container">
+            <iframe width="100%" height="400"
+                        src="https://www.youtube.com/embed/videoseries?list=PLg09Ks8C9YEKA88aEv2CTnA5t2L48O5eo&disable_polymer=true"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+
+                </iframe>
+        </div>
+    </section>
+        <div class="site-section testimonial-wrap custom-owl-carousel about" id="section1">
+            <div class="container">
+                <div class="row text-center justify-content mb-5" data-aos="fade-up">
+                    <div class="col-lg-6 mb-5 text-center">
+                        <h2 class="section-title w-100 mx-auto">News and Updates</h2>
+                    </div>
+                </div>
+
+                <div class="row align-items-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="col-lg-6 ml-auto" data-aos="fade-up" data-aos-delay="200">
+
+                        <div class="owl-carousel slide-one-item-alt">
+                            {% for blog in news %}
+                            <div class="portfolio-item">
+                                <div class="thumb">
+                                    <img src="{{ blog.image.url }}" alt="Image" height="320px">
+                                </div>
+                            </div>
+
+                            {% endfor %}
+
+                        </div>
+                        <div class="owl-custom-direction" style="margin-left: 20px;">
+                            <a href="#" class="custom-prev"><span class="icon-keyboard_arrow_left"></span></a>
+                            <a href="#" class="custom-next"><span class="icon-keyboard_arrow_right"></span></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 mr-auto">
+                        <div class="owl-carousel slide-one-item-alt-text about">
+                            {% for blog in news %}
+                            <div class="slide-text">
+                                <h1>{{ blog.title }}</h1>
+                                <p class="mb-5">{{ blog.description|truncatewords:40 }}</p>
+                                <div class="about-text">
+                                    <a class="btn" href="{% url 'news_update' %}">View More</a>
+                                </div>
+                            </div>
+
+                            {% endfor %}
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <section class="home-blog-area about pb-bottom ">
+            <div class="container">
+                <div class="row">
+                    <h2 class="section-title w-100 mx-auto">Community Stories</h2>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="about-text">
+                            <a class="btn" href="{% url 'community_story' %}">View All Stories<i class="ti-arrow-right"
+                                                                      style="color: lightslategrey;"></i></a>
+                        </div>
+                    </div>
+                    <div class="owl-carousel nonloop-block-14">
+                        {% for story in storys %}
+                            <div class="service">
+                            <div>
+                                <div class="home-blog-single mb-100">
+                                    <div class="blog-img-cap">
+                                        <div class="blog-img">
+                                            <img src="{{ story.image.url }}" alt="" class="img-fluid">
+                                        </div>
+                                        <div class="blog-cap">
+                                            <p>{{ story.published_date }}</p>
+                                            <p>{{ story.description|truncatewords:10 }}</p>
+                                        </div>
+                                        <a href="{% url 'community_story' %}" target="_blank" class="btn btn-outline-light py-3 px-5">View More<i
+                                                class="ti-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+{% endblock content %}
